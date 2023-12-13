@@ -22,7 +22,6 @@
     "build:docker": "vite build --mode docker",
     "build:no-cache": "pnpm store prune && npm run build",
     "build:test": "cross-env NODE_OPTIONS=--max-old-space-size=8192 pnpm vite build --mode test",
-    "commit": "czg",
     "dev": "pnpm vite",
     "preinstall": "npx only-allow pnpm",
     "postinstall": "turbo run stub",
@@ -30,7 +29,6 @@
     "lint:eslint": "eslint --cache --max-warnings 0  \"{src,mock}/**/*.{vue,ts,tsx}\" --fix",
     "lint:prettier": "prettier --write .",
     "lint:stylelint": "stylelint \"**/*.{vue,css,less,scss}\" --fix --cache --cache-location node_modules/.cache/stylelint/",
-    "prepare": "husky install",
     "preview": "npm run build && vite preview",
     "reinstall": "rimraf pnpm-lock.yaml && rimraf package.lock.json && rimraf node_modules && npm run bootstrap",
     "serve": "npm run dev",
@@ -61,11 +59,8 @@
       "prettier --write"
     ]
   },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-git"
-    }
-  },
+
+
   "dependencies": {
     "@ant-design/icons-vue": "^6.1.0",
     "@iconify/iconify": "^3.1.1",
@@ -133,9 +128,6 @@
     "@vue/compiler-sfc": "^3.3.4",
     "@vue/test-utils": "^2.4.0",
     "cross-env": "^7.0.3",
-    "cz-git": "^1.6.1",
-    "czg": "^1.6.1",
-    "husky": "^8.0.3",
     "lint-staged": "13.2.3",
     "prettier": "^2.8.8",
     "prettier-plugin-packagejson": "^2.4.6",
