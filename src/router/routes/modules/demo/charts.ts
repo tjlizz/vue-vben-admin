@@ -2,6 +2,7 @@ import type { AppRouteModule } from '@/router/types';
 
 import { getParentLayout, LAYOUT } from '@/router/constant';
 import { t } from '@/hooks/web/useI18n';
+import { RoleEnum } from '@/enums/roleEnum';
 
 const charts: AppRouteModule = {
   path: '/charts',
@@ -9,6 +10,7 @@ const charts: AppRouteModule = {
   component: LAYOUT,
   redirect: '/charts/echarts/map',
   meta: {
+    roles: [RoleEnum.DEMO],
     orderNo: 500,
     icon: 'ion:bar-chart-outline',
     title: t('routes.demo.charts.charts'),

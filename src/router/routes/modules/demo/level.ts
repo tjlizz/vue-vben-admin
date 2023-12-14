@@ -2,6 +2,7 @@ import type { AppRouteModule } from '@/router/types';
 
 import { getParentLayout, LAYOUT } from '@/router/constant';
 import { t } from '@/hooks/web/useI18n';
+import { RoleEnum } from '@/enums/roleEnum';
 
 const permission: AppRouteModule = {
   path: '/level',
@@ -9,6 +10,7 @@ const permission: AppRouteModule = {
   component: LAYOUT,
   redirect: '/level/menu1/menu1-1/menu1-1-1',
   meta: {
+    roles: [RoleEnum.DEMO],
     orderNo: 2000,
     icon: 'ion:menu-outline',
     title: t('routes.demo.level.level'),

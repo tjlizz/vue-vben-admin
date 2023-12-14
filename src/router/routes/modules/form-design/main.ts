@@ -1,12 +1,14 @@
 import type { AppRouteModule } from '@/router/types';
 
 import { LAYOUT } from '@/router/constant';
+import { RoleEnum } from '@/enums/roleEnum';
 
 const permission: AppRouteModule = {
   path: '/form-designer',
   name: 'Form-designer',
   component: LAYOUT,
   meta: {
+    roles: [RoleEnum.DEMO],
     orderNo: 10000,
     icon: 'ion:build-outline',
     title: '表单设计',

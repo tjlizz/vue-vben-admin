@@ -2,6 +2,7 @@ import type { AppRouteModule } from '@/router/types';
 
 import { LAYOUT } from '@/router/constant';
 import { t } from '@/hooks/web/useI18n';
+import { RoleEnum } from '@/enums/roleEnum';
 
 const system: AppRouteModule = {
   path: '/system',
@@ -15,9 +16,21 @@ const system: AppRouteModule = {
   },
   children: [
     {
+      path: 'processing',
+      name: 'Processing',
+      meta: {
+        roles: [RoleEnum.Developer],
+        title: '处理单元',
+        ignoreKeepAlive: false,
+      },
+      component: () => import('@/views/sys/processing/index.vue'),
+    },
+
+    {
       path: 'account',
       name: 'AccountManagement',
       meta: {
+        roles: [RoleEnum.Admin],
         title: t('routes.demo.system.account'),
         ignoreKeepAlive: false,
       },
@@ -27,6 +40,7 @@ const system: AppRouteModule = {
       path: 'vxeTableAccount',
       name: 'VxeTableAccountManagement',
       meta: {
+        roles: [RoleEnum.Admin],
         title: t('routes.demo.system.vxeTableAccount'),
         ignoreKeepAlive: false,
       },
@@ -36,6 +50,7 @@ const system: AppRouteModule = {
       path: 'account_detail/:id',
       name: 'AccountDetail',
       meta: {
+        roles: [RoleEnum.Admin],
         hideMenu: true,
         title: t('routes.demo.system.account_detail'),
         ignoreKeepAlive: true,
@@ -48,6 +63,8 @@ const system: AppRouteModule = {
       path: 'role',
       name: 'RoleManagement',
       meta: {
+        roles: [RoleEnum.Admin],
+
         title: t('routes.demo.system.role'),
         ignoreKeepAlive: true,
       },
@@ -58,6 +75,8 @@ const system: AppRouteModule = {
       path: 'menu',
       name: 'MenuManagement',
       meta: {
+        roles: [RoleEnum.Admin],
+
         title: t('routes.demo.system.menu'),
         ignoreKeepAlive: true,
       },
@@ -67,6 +86,8 @@ const system: AppRouteModule = {
       path: 'dept',
       name: 'DeptManagement',
       meta: {
+        roles: [RoleEnum.Admin],
+
         title: t('routes.demo.system.dept'),
         ignoreKeepAlive: true,
       },
@@ -76,6 +97,8 @@ const system: AppRouteModule = {
       path: 'changePassword',
       name: 'ChangePassword',
       meta: {
+        roles: [RoleEnum.Admin],
+
         title: t('routes.demo.system.password'),
         ignoreKeepAlive: true,
       },

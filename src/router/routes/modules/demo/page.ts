@@ -3,6 +3,7 @@ import type { AppRouteModule } from '@/router/types';
 import { getParentLayout, LAYOUT } from '@/router/constant';
 import { ExceptionEnum } from '@/enums/exceptionEnum';
 import { t } from '@/hooks/web/useI18n';
+import { RoleEnum } from '@/enums/roleEnum';
 
 const ExceptionPage = () => import('@/views/sys/exception/Exception.vue');
 
@@ -12,6 +13,7 @@ const page: AppRouteModule = {
   component: LAYOUT,
   redirect: '/page-demo/form/basic',
   meta: {
+    roles: [RoleEnum.DEMO],
     orderNo: 20,
     icon: 'ion:aperture-outline',
     title: t('routes.demo.page.page'),

@@ -2,6 +2,7 @@ import type { AppRouteModule } from '@/router/types';
 
 import { LAYOUT } from '@/router/constant';
 import { t } from '@/hooks/web/useI18n';
+import { RoleEnum } from '@/enums/roleEnum';
 
 const steps: AppRouteModule = {
   path: '/steps',
@@ -9,6 +10,7 @@ const steps: AppRouteModule = {
   component: LAYOUT,
   redirect: '/steps/index',
   meta: {
+    roles: [RoleEnum.DEMO],
     orderNo: 90000,
     hideChildrenInMenu: true,
     icon: 'whh:paintroll',
